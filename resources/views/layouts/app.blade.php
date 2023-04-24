@@ -61,7 +61,7 @@
 
         <main>
             <div>
-                {{ session()->get('success') }}
+              <span class="text-success">  {{ session()->get('success') }} </span>
             </div>
             <section>
                 @yield('content')

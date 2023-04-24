@@ -61,6 +61,7 @@
                                     @if (Auth::user()->role =="admin")
                                        <a href="{{ route('product.index') }}" class="dropdown-item text-white">ADMIN</a>
                                     @endif
+                                        <a href="{{ route('order.index') }}" class="dropdown-item text-white">Pedidos</a>
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST">
                                         @csrf
                                         <button type="submit" class="dropdown-item text-white">Logout</button>
@@ -70,7 +71,7 @@
                         @endguest
                         <button class="btn btn-default rounded">
                             <a href="{{ route('cart.index') }}">
-                                <img src="..\images\cart.png" width="25" />
+                                <img src="../images/cart.png" width="25" />
                             </a>
                         </button>
                     </ul>

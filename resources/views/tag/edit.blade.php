@@ -7,7 +7,7 @@
         @method('PUT')
         <div class="form-row col-md"> <!-- Nome da TAG-->
             <label for="nomeTag">TAG</label>
-            <input type="text" class="form-control" id="nomeTag" name="name" value="{{$tag->name}}">
+            <inpu required type="text" class="form-control" id="nomeTag" name="name" value="{{$tag->name}}">
             <div   class="d-flex flex-column">
                 <button type="submit"  class="btn btn-warning mt-2">Enviar</button>
             </div>

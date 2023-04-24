@@ -6,7 +6,7 @@
         @csrf
         <div class="form-row col-md"> <!-- Nome da Categoria-->
             <label for="nomeCate">Categoria</label>
-            <input type="text" class="form-control" id="nomeCate" name="name">
+            <input required type="text" class="form-control" id="nomeCate" name="name">
             <div   class="d-flex flex-column">
                 <button type="submit"  class="btn btn-warning mt-2">Enviar</button>
             </div>

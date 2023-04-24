@@ -8,7 +8,7 @@
         @csrf
         <div class="form-row col-md"> <!-- Nome da  TAG-->
             <label for="nomeTag">Tag</label>
-            <input type="text" class="form-control" id="nomeTag" name="name">
+            <input required type="text" class="form-control" id="nomeTag" name="name">
             <div   class="d-flex flex-column">
                 <button type="submit"  class="btn btn-warning mt-2">Enviar</button>
             </div>

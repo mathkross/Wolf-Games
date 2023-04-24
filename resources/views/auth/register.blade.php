@@ -2,7 +2,17 @@
     <x-auth-card>
         <x-slot name="logo">
             <a href="/">
-                <x-application-logo class="w-20 h-20 fill-current text-gray-500" />
+                <div style="
+                display: flex;
+                flex-direction: column;
+                flex-wrap: nowrap;
+                justify-content: center;
+                align-items: center;
+                align-content: stretch;"
+    >
+                    <img src="../images/epicWinsdow.gif" alt="E-vortex logo"  style="width: 70px; padding-bottom:5px" class=""/>
+                    <img src="../images/evortex.png" alt="E-vortex logo"  style="width: 250px"/>
+                </div>
             </a>
         </x-slot>
 

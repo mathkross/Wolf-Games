@@ -8,19 +8,19 @@
         @method('PUT')
         <div class="form-row col-md"> <!-- Nome do personagem-->
             <label for="nomeProd">Nome Personagem</label>
-            <input type="text" class="form-control" id="nomeProd" name="name" value="{{$product->name}}">
+            <input required type="text" class="form-control" id="nomeProd" name="name" value="{{$product->name}}">
             <label for="precoProd">Preço</label>
-            <input type="number" class="form-control" step="0.1" id="preçoProd"  name="price" value="{{$product->price}}">
+            <input required type="number" class="form-control" step="0.1" id="preçoProd"  name="price" value="{{$product->price}}">
         </div>
 
         <div class="form-row col-md"> <!-- estoque do personagem-->
             <label for="estokProd">Estoque</label>
-            <input  type="number" class="form-control"  id="estokProd" name="stock" value="{{$product->stock}}">
+            <input required type="number" class="form-control"  id="estokProd" name="stock" value="{{$product->stock}}">
         </div>
 
         <div class="form-row col-md"> <!-- Categoria do personagem-->
             <label for="categProd">Categoria</label>
-            <select class="form-control " name="category_id" id="categProd">
+            <select required class="form-control " name="category_id" id="categProd">
                 @foreach($categories as $category)
                 <option value="{{$category->id}}"
                     {{ $product->category_id == $category->id ? 'selected' : '' }}>
@@ -41,12 +41,12 @@
 
         <div class="form-row col-md"> <!-- Descrição do personagem-->
             <label for="descrProd">Descrição</label>
-            <textarea class="form-control"  id="descrProd" name="description">  {{$product->description}}</textarea>
+            <textarea required class="form-control"  id="descrProd" name="description">  {{$product->description}}</textarea>
         </div>
 
         <div class="form-row col-md"> <!-- Imagem do Personagem do personagem-->
             <label for="imgProd">Imagem do Produto</label>
-            <input type="file" class="form-control"  id="imgProd" name="image" value="{{$product->stock}}">
+            <input required type="file" class="form-control"  id="imgProd" name="image" value="{{$product->stock}}">
         </div>
         <div   class="d-flex flex-column">
             <button  class="btn btn-warning mt-5 " type="submit">Enviar</button>

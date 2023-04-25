@@ -1,9 +1,22 @@
-<div class="min-vh-100 d-flex flex-col sm:justify-center items-center pt-6 sm:pt-0 bg-dark">
-    <div>
-        {{ $logo }}
-    </div>
-
-    <div class="w-full sm:max-w-md mt-6 px-6 py-4 bg-white shadow-md overflow-hidden sm:rounded-lg">
-        {{ $slot }}
+<div class="min-vh-100 container-xl py-5">
+    <div class="card">
+        <div class="row">
+            <div class="col-4 p-3">
+            </div>
+            <div class="col-4 p-3 align-self-center">
+                {{ $logo }}
+            </div>
+            <div class="col-4 p-3">
+            </div>
+        </div>
+        <div class="card-body row">
+            <div class="col-4 p-5 m-1">
+            </div>
+            <div class="col-4 p-5 m-1">
+                {{ $slot }}
+            </div>
+            <div class="col-4 p-5 m-1">
+            </div>
+        </div>
     </div>
 </div>

@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
+
 <div class="container mt-5 pb-5">
     <table class="table table-striped table-dark">
         <thead>

@@ -8,15 +8,16 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:300,400,600,700&display=swap" rel="stylesheet">
-    <title>E-Vortex</title>
+    <title>Shonen Store</title>
 </head>
 
-<body style="background-color: #051022">
-    <div  class="bg-image" style="background-image:url(https://static.tibia.com/images/global/header/background-artwork.jpg);background-repeat: repeat-x" >
+<body style="background-color: #350709;">
+    <div  class="bg-image" style="background :url(/../images/fundo.png) center/contain repeat-x; height: 100vh;" >
         <header>
-            <nav class="navbar navbar-expand-md navbar navbar-dark bg-dark shadow-sm">
+            <nav class="navbar navbar-expand-md navbar navbar-dark shadow-sm" style = background-color:#101820>
                 <div class="container">
-                <a class="navbar-brand" href="{{ url('/') }}">E-vortex</a>
+                <a class="navbar-brand" href="{{ url('/') }}"><img src="/../images/shonnen.png" style="width:128px;height:80px;"></a>
+
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav mr-auto">
                         <li class="nav-item dropdown">
@@ -40,7 +41,7 @@
                         <div class="input-group">
                             <input type="text" class="form-control" placeholder="Digite o nome do produto" name="s">
                             <div class="input-group-append px-1">
-                                <button type="submit" class="input-group-text btn btn-outline-warning">Buscar</button>
+                                <button style="border:2px solid black; border-color:#d22630; color:#d22630"type="submit" class="input-group-text btn">Buscar</button>
                             </div>
                         </div>
                     </form>
@@ -55,7 +56,7 @@
                         @else
                             <li class="nav-item dropdown">
                                 <a id="navbarUser" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                   <span class="text-warning">Bem vindo </span> {{ Auth::user()->name }}
+                                   <span style="color:#d22630 "class="text">Bem vindo </span> {{ Auth::user()->name }}
                                 </a>
                                 <div class="dropdown-menu dropdown-menu-right bg-dark" aria-labelledby="navbarUser">
                                     @if (Auth::user()->role =="admin")
@@ -71,7 +72,7 @@
                         @endguest
                         <button class="btn btn-default rounded">
                             <a href="{{ route('cart.index') }}">
-                                <img src="../images/cart.png" width="25" />
+                                <img src="/../images/cart.png" width="25" />
                             </a>
                         </button>
                     </ul>
@@ -88,15 +89,14 @@
         @endif
         @yield('content')
     </main>
-    <div class="bg-dark text-muted  footer">
-        <div class="container bg-dark pb-5  pt-3">
-            <footer class="row row-cols-5  ">
+    <footer class="text-muted footer" style="background-color:#101820">
+        <div class="container pb-1  pt-2">
+            <div class="row row-cols-5  ">
                 <div class="col">
                     <div class="col">
-                        <a href="#" class="navbar-brand text-muted ">E-Vortex</a>
-                        <p>é um pequeno site de Ecommerce focado na venda de chares do jogo <a href="https://www.tibia.com/account/" class="text-warning">tibia</a></p>
+                        <a href="#" class="navbar-brand text-muted"><span style="color:#d22630">Shonen Store</span></a>
+                        <p>Sua loja virtual de entreterimento japonês</p>
                     </div>
-                <p class="text-muted">Criado por Kirbyns&copy; 2022</p>
                 </div>
 
             <div class="col">
@@ -104,7 +104,7 @@
             </div>
 
             <div class="col">
-                <h5>Categorias</h5>
+                <h5 style="color:#d22630">Categorias</h5>
                 <ul class="nav flex-column">
                     @foreach (\App\Models\Category::all() as $category)
                         <li class="nav-item mb-2"><a href="{{ route('serach-category', $category->id) }}" class="nav-link p-0 text-muted">{{ $category->name }}</a></li>
@@ -113,16 +113,14 @@
             </div>
 
             <div class="col-4">
-                <h5>Tags</h5>
+                <h5 style="color:#d22630">Tags</h5>
                 <ul class="nav d-flex align-content-end flex-wrap">
                     @foreach (\App\Models\Tag::all() as $tag)
                         <li class="btn btn-outline-light mx-1 mb-2 btn-sm"><a href="{{ route('serach-tag', $tag->id) }}" class="nav-link p-0 text-muted">{{ $tag->name }}</a></li>
                     @endforeach
                 </ul>
             </div>
-        </footer>
-    </div>
-
+        </div>
+</footer>
 </body>
-
 </html>

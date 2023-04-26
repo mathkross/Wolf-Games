@@ -64,7 +64,7 @@
             <table class="table">
                 <thead>
                     <tr>
-                        <th>foto</th>
+                        <th>Foto</th>
                         <th>Produto</th>
                         <th>Preço Unidade</th>
                         <th>Quantidade</th>
@@ -74,7 +74,7 @@
                 <?php $total = 0.0 ?>
                 @foreach($itens as $item)
                 <tr>
-                    <td> <img src="{{$item->Product->image}}" alt=""></td>
+                    <td> <img style="width: 340px;" src="{{$item->Product->image}}" alt=""></td>
                     <td>{{$item->Product->name}}</td>
                     <td> R$ {{number_format($item->Product->price, 2, ',', '.')}}</td>
                     <td>

@@ -3,7 +3,7 @@
 <section>
     <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
-            <li class="breadcrumb-item" aria-current="page"><a href="{{ route('serach-category', $product->Category->id) }}">{{$product->Category->name}}</a></li>
+            <li class="breadcrumb-item" aria-current="page"><a class="text-muted" href="{{ route('serach-category', $product->Category->id) }}">{{$product->Category->name}}</a></li>
             <li class="breadcrumb-item active" aria-current="page">{{$product->name}}</li>
         </ol>
       </nav>

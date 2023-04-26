@@ -10,15 +10,15 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
     </script>
-    <title>E-Vortex</title>
+    <title>Shonen Store</title>
 </head>
 
-<body style="background-color: #051022">
-    <div  class="bg-image" style="background-image:url(https://static.tibia.com/images/global/header/background-artwork.jpg);background-repeat: repeat-x" >
+<body style="background-color: #350709">
+    <div  class="bg-image" style="background :url(/../images/fundo.png) center/contain repeat-x; height: 100vh;" >
         <header>
-            <nav class="navbar navbar-expand-md navbar navbar-dark bg-dark shadow-sm">
+            <nav class="navbar navbar-expand-md navbar navbar-dark shadow-sm" style="background-color:#101820">
                 <div class="container">
-                    <a class="navbar-brand" href="{{ url('/') }}">E-vortex</a>
+                <a class="navbar-brand" href="{{ url('/') }}"><img src="/../images/shonnen.png" style="width:128px;height:80px;"></a>
                     <div class="collapse navbar-collapse">
                         <ul class="navbar-nav mr-auto">
                             <li class="nav-item dropdown"> <!-- dropdown para Produtos -->

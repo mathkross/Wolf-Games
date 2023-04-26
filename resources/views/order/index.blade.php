@@ -19,7 +19,7 @@
                     <?php $total = 0.0 ;  $totalUni = 0 ?>
                     @foreach($order->Products as $product)
                     <tr>
-                        <td><img src="{{$product->image}}"> </td>
+                        <td><img style="width: 340px" src="{{$product->image}}"> </td>
                         <td  class="align-middle">{{$product->pivot->name}}</td>
                         <td  class="align-middle">{{$product->pivot->units}}</td>
                         <td  class="align-middle">{{ number_format($product->pivot->price * $product->pivot->units, 2, ',', '.')}}</td>

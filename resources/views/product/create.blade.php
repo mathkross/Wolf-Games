@@ -7,7 +7,7 @@
         @csrf
 
         <div class="form-row col-md"> <!-- Nome do personagem-->
-            <label for="nomeProd">Nome Personagem</label>
+            <label for="nomeProd">Nome produto</label>
             <input required type="text" class="form-control" id="nomeProd" name="name">
             <label for="precoProd">Preço</label>
             <input required type="number" class="form-control" step="0.1" id="preçoProd"  name="price">

@@ -16,14 +16,14 @@
         <header>
             <nav class="navbar navbar-expand-md navbar navbar-dark shadow-sm" style=background-color:#101820>
                 <div class="container">
-                    <a class="navbar-brand" href="{{ url('/') }}"><img src="/../images/shonnen.png" style="width:128px;height:80px;"></a>
+                    <a class="navbar-brand" href="{{ url('/assinatura') }}"><img src="/../images/shonnen.png" style="width:128px;height:80px;"></a>
 
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav mr-auto">
 
 
-                            <li>
-                                <a class="nav-link" href="{{ url('/assinatura') }}" style=" color:#d22630" id="navbarTag" role="button">Assinaturas</a>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ url('/') }}" style=" color:#d22630" id="navbarTag" role="button">Produtos</a>
                             </li>
 
                             <li class="nav-item dropdown">
@@ -34,7 +34,7 @@
                                     @endphp
 
                                     @foreach ($categories as $category)<!-- listagem categorias-->
-                                    <a class="dropdown-item text-white" href="{{ route('search.category', $category->id) }}">{{ $category->name }}</a>
+                                    <a class="dropdown-item text-white" href="{{ route('search.categoryD', $category->id) }}">{{ $category->name }}</a>
                                     @endforeach
                                 </ul>
                             </li>
@@ -43,13 +43,13 @@
                                 <a class="nav-link dropdown-toggle" href="#" id="navbarTag" role="button" data-bs-toggle="dropdown">Tags</a>
                                 <ul class="dropdown-menu bg-dark" aria-labelledby="navbarTag">
                                     @foreach (\App\Models\Tag::all() as $tag)
-                                    <a class="dropdown-item text-white" href="{{ route('search.tag', $tag->id) }}">{{ $tag->name }}</a>
+                                    <a class="dropdown-item text-white" href="{{ route('search.tagD', $tag->id) }}">{{ $tag->name }}</a>
                                     @endforeach
                                 </ul>
                             </li>
 
                         </ul>
-                        <form action="{{ route('search.product') }}" class="form-group my-0 mx-auto w-50"> <!--busca de produto-->
+                        <form action="{{ route('search.demand') }}" class="form-group my-0 mx-auto w-50"> <!--busca de produto-->
                             <div class="input-group">
                                 <input type="text" class="form-control" placeholder="Digite o nome do produto" name="s">
                                 <div class="input-group-append px-1">
@@ -83,7 +83,7 @@
                             </li>
                             @endguest
                             <button class="btn btn-default rounded">
-                                <a href="{{ route('cart.index') }}">
+                                <a href="{{ route('cart.demand') }}">
                                     <img src="/../images/cart.png" width="25" />
                                 </a>
                             </button>
@@ -121,8 +121,9 @@
                             @php $categories = \App\Models\Category::all();
                             unset($categories[0]);
                             @endphp
+
                             @foreach ($categories as $category)
-                            <li class="nav-item mb-2"><a href="{{ route('search.category', $category->id) }}" class="nav-link p-0 text-muted">{{ $category->name }}</a></li>
+                            <li class="nav-item mb-2"><a href="{{ route('search.categoryD', $category->id) }}" class="nav-link p-0 text-muted">{{ $category->name }}</a></li>
                             @endforeach
                         </ul>
                     </div>
@@ -130,8 +131,9 @@
                     <div class="col-4">
                         <h5 style="color:#d22630">Tags</h5>
                         <ul class="nav d-flex align-content-end flex-wrap">
+
                             @foreach (\App\Models\Tag::all() as $tag)
-                            <li class="btn btn-outline-light mx-1 mb-2 btn-sm"><a href="{{ route('search.tag', $tag->id) }}" class="nav-link p-0 text-muted">{{ $tag->name }}</a></li>
+                            <li class="btn btn-outline-light mx-1 mb-2 btn-sm"><a href="{{ route('search.tagD', $tag->id) }}" class="nav-link p-0 text-muted">{{ $tag->name }}</a></li>
                             @endforeach
                         </ul>
                     </div>

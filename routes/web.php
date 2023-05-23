@@ -7,12 +7,23 @@ use App\Http\Controllers\TagController;
 use App\Http\Controllers\eCommerceController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\OrderController;
+use App\Http\Controllers\DemandsController;
 
 Route::get('/', [eCommerceController::class, 'index'])->name('home');
-Route::get('/search/category/{category}', [eCommerceController::class, 'searchCategory'])->name('serach-category');
-Route::get('/search/tag/{tag}', [eCommerceController::class, 'searchTag'])->name('serach-tag');
-Route::get('/search/product/',  [eCommerceController::class, 'searchProduct'])->name('serach.product');
+Route::get('/search/category/{category}', [eCommerceController::class, 'searchCategory'])->name('search.category');
+Route::get('/search/tag/{tag}', [eCommerceController::class, 'searchTag'])->name('search.tag');
+Route::get('/search/product/',  [eCommerceController::class, 'searchProduct'])->name('search.product');
 Route::get('/show/{product}', [eCommerceController::class, 'showProduct'])->name('show.product');
+
+
+//Assinatura
+Route::get('/assinatura', [eCommerceController::class, 'index2'])->name('assinatura');
+Route::get('/searchD/category/{category}', [eCommerceController::class, 'searchCategoryD'])->name('search.categoryD');
+Route::get('/searchD/tag/{tag}', [eCommerceController::class, 'searchTagD'])->name('search.tagD');
+Route::get('/searchD/demand/',  [eCommerceController::class, 'searchDemand'])->name('search.demand');
+Route::get('/showD/{demand}', [eCommerceController::class, 'showDemand'])->name('show.demand');
+
+
 
 require __DIR__.'/auth.php';
 
@@ -22,6 +33,13 @@ Route::middleware(['auth'])->group(function(){
     Route::delete('/cart/{product}', [CartController::class, 'destroy'])->name('cart.destroy');
     Route::post('/order', [OrderController::class, 'store'])->name('order.store');
     Route::get('/order', [OrderController::class, 'index'])->name('order.index');
+
+    //Assinatura
+    Route::get('/cartD', [CartController::class, 'demand'])->name('cart.demand');
+    Route::post('/cartD/{demand}', [CartController::class, 'storeD'])->name('cart.storeD');
+    Route::delete('/cartD/{demand}', [CartController::class, 'destroyD'])->name('cart.destroyD');
+
+
 });
 
 Route::middleware(['auth','admin'])->group(function(){
@@ -33,6 +51,15 @@ Route::middleware(['auth','admin'])->group(function(){
     Route::put('/product/edit/{product}', [ProductController::class, 'update'])->name('product.update');
     Route::get('/product/trash', [ProductController::class, 'trash'])->name('product.trash');
     Route::get('/product/restore/{product}', [ProductController::class, 'restore'])->name('product.restore');
+
+    Route::get('/demand/create', [DemandsController::class, 'create'])->name('demand.create');
+    Route::post('/demand/create', [DemandsController::class, 'store'])->name('demand.store');
+    Route::get('/demand',[DemandsController::class, 'index'])->name('demand.index');
+    Route::get('/demand/destroy/{demand}', [DemandsController::class, 'destroy'])->name('demand.destroy');
+    Route::get('/demand/edit/{demand}', [DemandsController::class, 'edit'])->name('demand.edit');
+    Route::put('/demand/edit/{demand}', [DemandsController::class, 'update'])->name('demand.update');
+    Route::get('/demand/trash', [DemandsController::class, 'trash'])->name('demand.trash');
+    Route::get('/demand/restore/{demand}', [DemandsController::class, 'restore'])->name('demand.restore');
 
 
     Route::get('/category/create', [CategoryController::class, 'create'])->name('category.create');

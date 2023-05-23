@@ -6,14 +6,14 @@
     <div  class=" container pb-5 mt-5 form-row bg-light shadow p-3 mb-5 bg-light rounded-3 col-4">
         @csrf
 
-        <div class="form-row col-md"> <!-- Nome do personagem-->
+        <div class="form-row col-md"> <!-- Nome do produto-->
             <label for="nomeProd">Nome produto</label>
             <input required type="text" class="form-control" id="nomeProd" name="name">
             <label for="precoProd">Preço</label>
             <input required type="number" class="form-control" step="0.1" id="preçoProd"  name="price">
         </div>
 
-        <div class="form-row col-md"> <!-- estoque do personagem-->
+        <div class="form-row col-md"> <!-- estoque do produto-->
             <label for="estokProd">Estoque</label>
             <input required type="number" class="form-control"  id="estokProd" name="stock">
         </div>
@@ -26,7 +26,7 @@
                 @endforeach
             </select>
         </div>
-        <div class="form-row col-md"> <!-- Tagamento do personagem-->
+        <div class="form-row col-md"> <!-- Tagamento do produto-->
             <label for="tagProd">Tag</label>
             <select class="form-control"  multiple name="tags[]" id="tagProd">
                 @foreach($tags as $tag)
@@ -35,12 +35,12 @@
             </select>
         </div>
 
-        <div class="form-row col-md"> <!-- Descrição do personagem-->
+        <div class="form-row col-md"> <!-- Descrição do produto-->
             <label  for="descrProd">Descrição</label>
             <textarea class="form-control"  id="descrProd" name="description" required > </textarea>
         </div>
 
-        <div class="form-row col-md"> <!-- Imagem do Personagem do personagem-->
+        <div class="form-row col-md"> <!-- Imagem do produto-->
             <label for="imgProd">Imagem do Produto</label>
             <input required type="file" class="form-control"  id="imgProd" name="image">
         </div>

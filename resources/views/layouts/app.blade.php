@@ -29,6 +29,14 @@
                                     <a class="dropdown-item text-warning" href="{{route('product.create')}}">Criar Produto</a>
                                 </ul>
                             </li>
+                            <li class="nav-item dropdown"> <!-- dropdown para Assinatura -->
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarProdutosAdm" role="button" data-bs-toggle="dropdown">Assinaturas</a>
+                                <ul class="dropdown-menu bg-dark" aria-labelledby="navbarProdutosAdm">
+                                    <a class="dropdown-item text-light" href="{{ route('demand.index') }}"> Listagem Assinaturas</a>
+                                    <a class="dropdown-item text-light" href="{{ route('demand.trash') }}">Lixeira Assinaturas</a>
+                                    <a class="dropdown-item text-warning" href="{{route('demand.create')}}">Criar Assinaturas</a>
+                                </ul>
+                            </li>
                             <li class="nav-item dropdown"> <!-- dropdown para Categorias -->
                                 <a class="nav-link dropdown-toggle" href="#" id="navbarProdutosAdm" role="button" data-bs-toggle="dropdown">Categorias</a>
                                 <ul class="dropdown-menu bg-dark" aria-labelledby="navbarProdutosAdm">

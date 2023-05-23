@@ -14,10 +14,4 @@ class Order extends Model
     {
         return $this->belongsToMany(Product::class)->withPivot('name','price','units');
     }
-
-    public function Demands()
-    {
-        return $this->belongsToMany(Demand::class)->withPivot('name','price','units');
-    }
-
 }

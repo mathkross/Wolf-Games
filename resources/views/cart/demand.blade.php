@@ -4,7 +4,7 @@
     <div class="row">
         <div class="col-4">
             <h2>Detalhes do Endereço</h2>
-            <form action="{{ route('order.store') }}" method="POST">
+            <form action="{{ route('orderD.storeD') }}" method="POST">
                 @csrf
                 {{-- bloco conjunto de validação, o de baixo ficou mais bonito, por isso comentei esse
                      @if ($errors->any())

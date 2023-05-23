@@ -5,10 +5,10 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class DemandOrder extends Model
+class OrdDemand extends Model
 {
     use HasFactory;
-    protected $fillable = ['user_id', 'address', 'city', 'state', 'zipcode', 'demand_id', 'name', 'price', 'units'];
+    protected $fillable = ['user_id', 'address', 'city', 'state', 'zipcode', 'Demand_id', 'name', 'price', 'units'];
 
     public function Demands()
     {

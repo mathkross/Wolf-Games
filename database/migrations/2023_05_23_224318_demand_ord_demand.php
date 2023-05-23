@@ -8,9 +8,9 @@ return new class extends Migration
 {
     public function up()
     {
-        Schema::create('order_demand', function (Blueprint $table) {
-            $table->integer('order_id');
+        Schema::create('demand_ord_demand', function (Blueprint $table) {
             $table->integer('demand_id');
+            $table->integer('ord_demand_id');
             $table->string('name');
             $table->decimal('price', 8, 2);
             $table->integer('units');
@@ -20,6 +20,6 @@ return new class extends Migration
 
     public function down()
     {
-        Schema::dropIfExists('order_demand');
+        Schema::dropIfExists('demand_ord_demand');
     }
 };

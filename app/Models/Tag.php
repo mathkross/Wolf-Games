@@ -15,4 +15,10 @@ class Tag extends Model
     public function Products(){
         return $this->belongsToMany(Product::class);
     }
+
+    public function Demands(){
+        return $this->belongsToMany(Demand::class);
+    }
+
+    
 }

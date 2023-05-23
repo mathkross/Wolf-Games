@@ -3,7 +3,7 @@
 <section>
     <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
-            <li class="breadcrumb-item" aria-current="page"><a class="text-muted" href="{{ route('serach-category', $product->Category->id) }}">{{$product->Category->name}}</a></li>
+            <li class="breadcrumb-item" aria-current="page"><a class="text-muted" href="{{ route('search.category', $product->Category->id) }}">{{$product->Category->name}}</a></li>
             <li class="breadcrumb-item active" aria-current="page">{{$product->name}}</li>
         </ol>
       </nav>
@@ -28,7 +28,7 @@
             <div class="text-center">
                 <h3>Tags</h3>
                 @foreach($product->Tags as $tag)
-                    <a class="btn btn-sm btn-secondary" href="{{ route('serach-tag', $tag->id) }}">{{$tag->name}}</a>
+                    <a class="btn btn-sm btn-secondary" href="{{ route('search.tag', $tag->id) }}">{{$tag->name}}</a>
                 @endforeach
             </div>
         </div>

@@ -10,7 +10,6 @@
                             justify-content: center;
                             align-items: center;
                             align-content: stretch;">
-                    <!-- <img src="../images/shonnen.png" alt="E-vortex logo"  style="width: 70px; padding-bottom:5px" class=""/> -->
                     <img src="../images/shonnen.png" alt="E-vortex logo" style="width: 700px" />
                 </div>
             </a>
@@ -36,26 +35,26 @@
                 </div>
 
                 <!-- Remember Me -->
-                <div class="block mt-4">
+                <div class="block mt-3">
                     <label for="remember_me" class="inline-flex items-center">
                         <input id="remember_me" type="checkbox" class="rounded border-gray-300 text-indigo-600 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" name="remember">
-                        <span class="ml-2 text-sm text-gray-600">{{ __('Remember me') }}</span>
+                        <span class="ml-2 text-sm text-gray-600">{{ __('Lembre de mim') }}</span>
                     </label>
                 </div>
 
                 <!-- Forgot password -->
                 <div class="flex items-center">
-                    <x-button class="ml-3 btn btn-danger">
-                        {{ __('Log in') }}
+                    <x-button class="me-1 btn btn-danger">
+                        {{ __('Login') }}
                     </x-button>
+                    <a class="mx-1 text-sm btn btn-dark" href="{{ route('register') }}">
+                        {{ __('Registrar') }}
+                    </a>
                     @if (Route::has('password.request'))
-                    <a class="text-sm btn link-danger" href="{{ route('password.request') }}">
-                        {{ __('Forgot your password?') }}
+                    <a class="ms-1 text-sm link-danger" href="{{ route('password.request') }}">
+                        {{ __('Esqueceu sua senha?') }}
                     </a>
                     @endif
-                </div>
-                <div>
-
                 </div>
             </form>
         </div>

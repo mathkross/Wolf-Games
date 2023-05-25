@@ -8,62 +8,48 @@
                 flex-wrap: nowrap;
                 justify-content: center;
                 align-items: center;
-                align-content: stretch;"
-    >
-                    <img src="../images/epicWinsdow.gif" alt="E-vortex logo"  style="width: 70px; padding-bottom:5px" class=""/>
-                    <img src="../images/evortex.png" alt="E-vortex logo"  style="width: 250px"/>
+                align-content: stretch;">
+                    <img src="../images/shonnen.png" alt="E-vortex logo" style="width: 700px" />
                 </div>
             </a>
         </x-slot>
 
         <!-- Validation Errors -->
         <x-auth-validation-errors class="mb-4" :errors="$errors" />
+        <div class="container d-felx justofy-content-center">
+            <form method="POST" action="{{ route('register') }}">
+                @csrf
 
-        <form method="POST" action="{{ route('register') }}">
-            @csrf
+                <!-- Name -->
+                <div class="my-2">
+                    <x-input class="form-control block mt-1 w-full" placeholder="Nome" id="name" type="text" name="name" :value="old('name')" required autofocus />
+                </div>
 
-            <!-- Name -->
-            <div>
-                <x-label for="name" :value="__('Name')" />
+                <!-- Email Address -->
+                <div class="my-2">
+                    <x-input class="form-control block mt-1 w-full" placeholder="Email" id="email" type="email" name="email" :value="old('email')" required />
+                </div>
 
-                <x-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')" required autofocus />
-            </div>
+                <!-- Password -->
+                <div class="my-2">
+                    <x-input class="form-control block mt-1 w-full" placeholder="Senha" id="password" type="password" name="password" required autocomplete="new-password" />
+                </div>
 
-            <!-- Email Address -->
-            <div class="mt-4">
-                <x-label for="email" :value="__('Email')" />
+                <!-- Confirm Password -->
+                <div class="my-2">
+                    <x-input class="form-control block mt-1 w-full" placeholder="Confirmar Senha" id="password_confirmation" type="password" name="password_confirmation" required />
+                </div>
 
-                <x-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required />
-            </div>
+                <div class="flex items-center my-3">
+                    <x-button class="ml-3 btn btn-dark">
+                        {{ __('Registrar') }}
+                    </x-button>
 
-            <!-- Password -->
-            <div class="mt-4">
-                <x-label for="password" :value="__('Password')" />
-
-                <x-input id="password" class="block mt-1 w-full"
-                                type="password"
-                                name="password"
-                                required autocomplete="new-password" />
-            </div>
-
-            <!-- Confirm Password -->
-            <div class="mt-4">
-                <x-label for="password_confirmation" :value="__('Confirm Password')" />
-
-                <x-input id="password_confirmation" class="block mt-1 w-full"
-                                type="password"
-                                name="password_confirmation" required />
-            </div>
-
-            <div class="flex items-center justify-end mt-4">
-                <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('login') }}">
-                    {{ __('Already registered?') }}
-                </a>
-
-                <x-button class="ml-4">
-                    {{ __('Register') }}
-                </x-button>
-            </div>
-        </form>
+                    <a class="text-sm btn link-danger" href="{{ route('login') }}">
+                        {{ __('Já registrado?') }}
+                    </a>
+                </div>
+            </form>
+        </div>
     </x-auth-card>
 </x-guest-layout>

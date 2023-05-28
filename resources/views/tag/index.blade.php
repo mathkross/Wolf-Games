@@ -8,7 +8,6 @@
                 <th>ID</th>
                 <th>Nome da Tag</th>
                 <th>Quantidade de Produtos</th>
-                <th>Quantidade de Assinaturas</th>
                 <th>Editar</th>
                 <th>Apagar</th>
             </tr>
@@ -19,7 +18,6 @@
                 <td>{{$tag->id}}</td>
                 <td>{{$tag->name}}</td>
                 <td>{{$tag->Products->count()}}</td>
-                <td>{{$tag->Demands->count()}}</td>
                 <td><a class="btn btn-warning" href="{{ route('tag.edit', $tag->id) }}">Editar</a></td>
                 <td><a class="btn btn-danger" href="{{ route('tag.destroy', $tag->id) }}">Apagar</a></td>
             </tr>

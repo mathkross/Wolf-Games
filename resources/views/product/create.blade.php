@@ -18,11 +18,19 @@
             <input required type="number" class="form-control"  id="estokProd" name="stock">
         </div>
 
-        <div class="form-row col-md"> <!-- Categoria do personagem-->
+        <div class="form-row col-md"> <!-- Categoria do produto-->
             <label for="categProd">Categoria</label>
             <select required class="form-control " name="category_id" id="categProd">
                 @foreach($categories as $category)
                 <option value="{{$category->id}}">{{ $category->name }}</option>
+                @endforeach
+            </select>
+        </div>
+        <div class="form-row col-md"> <!-- Tipo do produto-->
+            <label for="typeProd">Tipo</label>
+            <select required class="form-control " name="type_id" id="typeProd">
+                @foreach($types as $type)
+                <option value="{{$type->id}}">{{ $type->name }}</option>
                 @endforeach
             </select>
         </div>

@@ -9,7 +9,6 @@
                 <th>ID</th>
                 <th>Nome da Categoria</th>
                 <th>Quantidade de Produtos na Categoria</th>
-                <th>Quantidade de Assinaturas na Categoria</th>
                 <th>Editar</th>
                 <th>Apagar</th>
             </tr>
@@ -20,7 +19,6 @@
                 <td>{{$category->id}}</td>
                 <td>{{$category->name}}</td>
                 <td>{{$category->Products->count() }}
-                <td>{{$category->Demands->count() }}
                 <td><a class="btn btn-warning" href="{{ route('category.edit', $category->id) }}">Editar</a></td>
                 <td><a class="btn btn-danger" href="{{ route('category.destroy', $category->id) }}">Apagar</a></td>
             </tr>

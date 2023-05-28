@@ -6,19 +6,19 @@ use Illuminate\Http\Request;
 use App\Models\Product;
 use App\Models\Category;
 use App\Models\Tag;
+use App\Models\Type;
 
 
 class ProductController extends Controller
 {
     public function index(){
-       // $products = DB::table(table: 'products')->paginate(perPage:2); tentativa de paginação.
-       //return view('products.index')->with('products', $product->simplePaginate(4));
         return view('product.index')->with('products',Product::all());
     }
 
     public function create(){
         return view('product.create')->with([
             'categories' => Category::all(),
+            'types' => Type::all(),
             'tags' => Tag::all()]);
     }
 
@@ -31,6 +31,7 @@ class ProductController extends Controller
             'price' => $request->price,
             'stock' => $request->stock,
             'category_id' => $request->category_id,
+            'type_id' => $request->type_id,
             'image' => $image
         ]);
 
@@ -50,6 +51,7 @@ class ProductController extends Controller
         return view('product.edit')->with([
             'product' => $product,
             'categories' => Category::all(),
+            'types' => Type::all(),
             'tags' => Tag::all()]);
     }
 
@@ -62,6 +64,7 @@ class ProductController extends Controller
                 'price' => $request->price,
                 'stock' => $request->stock,
                 'category_id' => $request->category_id,
+                'type_id' => $request->type_id,
                 'image' => $image
             ]);
         }
@@ -72,6 +75,7 @@ class ProductController extends Controller
                 'price' => $request->price,
                 'stock' => $request->stock,
                 'category_id' => $request->category_id,
+                'type_id' => $request->type_id,
             ]);
 
         $product->Tags()->sync($request->tags);

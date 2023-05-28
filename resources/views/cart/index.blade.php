@@ -74,19 +74,19 @@
                 <?php $total = 0.0 ?>
                 @foreach($itens as $item)
                 <tr>
-                    <td> <img style="width: 340px;" src="{{$item->Product->image}}" alt=""></td>
+                    <td> <img class="card-img-top h-50 w-50" src="{{$item->Product->image}}" alt=""></td>
                     <td>{{$item->Product->name}}</td>
                     <td> R$ {{number_format($item->Product->price, 2, ',', '.')}}</td>
                     <td>
-                        <form action="{{ route('cart.store', $item->Product->id) }}" method="POST" style="display:inline">
-                            @csrf
-                            <button type="submit" class="btn btn-warning btn-sm">+</button>
-                        </form>
                         {{$item->units}}
                         <form action="{{ route('cart.destroy', $item->Product->id) }}" method="POST" style="display:inline">
                             @csrf
                             @method("DELETE")
                             <button type="submit" class="btn btn-danger btn-sm">-</button>
+                        </form>
+                        <form action="{{ route('cart.store', $item->Product->id) }}" method="POST" style="display:inline">
+                            @csrf
+                            <button type="submit" class="btn btn-warning btn-sm">+</button>
                         </form>
                     </td>
                 </tr>

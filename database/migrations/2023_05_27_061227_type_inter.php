@@ -13,8 +13,8 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::table('demands', function (Blueprint $table) {
-            $table->string('image')->default('storage/itens/image.jpg');
+        Schema::table('products', function (Blueprint $table) {
+            $table->integer('type_id');
         });
     }
 
@@ -25,8 +25,8 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::table('demands', function (Blueprint $table) {
-            $table->dropColumn('image');
+        Schema::table('products', function (Blueprint $table) {
+            $table->dropColumn('type_id');
         });
     }
 };

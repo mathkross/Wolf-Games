@@ -12,6 +12,7 @@
                 <th>Nome</th>
                 <th>Descrição</th>
                 <th>Categoria</th>
+                <th>Tipo</th>
                 <th>Tag</th>
                 <th>Preço</th>
                 <th>Estoque</th>
@@ -27,6 +28,7 @@
                 <td>{{$product->name}}</td>
                 <td>{{$product->description}}</td>
                 <td>{{$product->Category->name}}</td>
+                <td>{{$product->Type->name}}</td>
                 <td>@foreach($product->Tags()->get() as $tag)
                 {{$tag->name}}
                 @endforeach</td>

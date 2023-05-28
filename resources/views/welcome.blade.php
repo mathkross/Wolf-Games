@@ -2,59 +2,57 @@
 
 @section('content')
 <div class="container pb-3">
-        <div id="carouselExampleDark" class="carousel carousel-dark slide">
+    <div id="carouselExampleDark" class="carousel carousel-dark slide">
         <div class="carousel-indicators">
             <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
             <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
             <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
-          </div>
-          <div class="carousel-inner" style="height: 30em">
+        </div>
+        <div class="carousel-inner" style="height: 30em">
             <div class="carousel-item active h-100" data-bs-interval="10000" style="background: url(../images/shonnen1.jpg) center/contain no-repeat">
             </div>
-            <div class="carousel-item h-100" data-bs-interval="2000"  style="background: url(../images/camisa1.jpg) center/contain no-repeat">
+            <div class="carousel-item h-100" data-bs-interval="2000" style="background: url(../images/camisa1.jpg) center/contain no-repeat">
             </div>
             <div class="carousel-item h-100" style="background: url(../images/camisa2.jpg) center/contain no-repeat">
             </div>
-          </div>
-          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
             <span class="visually-hidden">Previous</span>
-          </button>
-          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
             <span class="carousel-control-next-icon" aria-hidden="true"></span>
             <span class="visually-hidden">Next</span>
-          </button>
-        </div>
+        </button>
+    </div>
 </div>
 
-    <section class="container">
-        <div class="row">
-            @foreach ($products as $product)
-                <div class="card bg-light mx-3 shadow p-3 mb-5 bg-white rounded" style="width: 18rem;">
-                <img src="{{ asset($product->image) }}" class="card-img-top">
+<section class="container">
+    <div class="row">
+        @foreach ($products as $product)
+        <div class="card bg-light mx-3 shadow p-3 mb-5 bg-white rounded" style="width: 18rem;">
+            <img src="{{ asset($product->image) }}" class="card-img-top h-100 w-100">
 
-                    <h5 class="card-title text-center">{{ $product->name }}</h5>
+            <h5 class="card-title text-center">{{ $product->name }}</h5>
 
-                    <div class="text-center">
-                    <p class="card-text">{{$product->description}}</p>
-                        <span class="text-muted">R$ {{ number_format($product->price, 2, ',', '.')}}</span>
-                    </div>
-                    <div class="card-body text-center">
-                        <a href="{{ route('show.product', $product->id) }}" class="btn btn-warning btn-sm card-link">Visualizar</a>
-                        <form action="{{ route('cart.store', $product->id) }}" method="POST" style="display:inline">
-                            @csrf
-                            <button type="submit" class="btn btn-dark btn-sm card-link">Comprar</button>
-                        </form>
-                    </div>
-                </div>
-
-            @endforeach
-
-            {{ $products->links()}}
+            <div class="text-center">
+                <p class="card-text">{{$product->description}}</p>
+                <span class="text-muted">R$ {{ number_format($product->price, 2, ',', '.')}}</span>
+            </div>
+            <div class="card-body text-center">
+                <a style="background-color:#d22630" href="{{ route('show.product', $product->id) }}" class="btn btn-sm card-link text-white">Visualizar</a>
+                <form action="{{ route('cart.store', $product->id) }}" method="POST" style="display:inline">
+                    @csrf
+                    <button style="background-color:#101820" type="submit" class="btn text-white btn-sm card-link">Comprar</button>
+                </form>
+            </div>
         </div>
 
-    </section>
+        @endforeach
+
+        {{ $products->links()}}
+    </div>
+
+</section>
 
 @endsection
-
-

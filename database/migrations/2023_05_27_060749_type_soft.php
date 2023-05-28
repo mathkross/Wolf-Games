@@ -13,13 +13,8 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('demands', function (Blueprint $table) {
-            $table->id();
-            $table->string('name');
-            $table->string('description');
-            $table->decimal('price', 8, 2);
-            $table->integer('stock');
-            $table->timestamps();
+        Schema::table('types', function (Blueprint $table) {
+            $table->softDeletes();
         });
     }
 
@@ -30,6 +25,8 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('demands');
+        Schema::table('types', function (Blueprint $table) {
+            $table->dropColumn('deleted_at');
+        });
     }
 };

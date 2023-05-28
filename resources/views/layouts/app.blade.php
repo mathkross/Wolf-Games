@@ -12,7 +12,7 @@
 </head>
 
 <body style="background-color: #350709">
-    <div class="bg-image" style="background :url(/../images/fundo.png) center/contain repeat-x; height: 100vh;">
+    <div class="bg-image" style="background :url(/../images/fundo.png) center/cover no-repeat; height: 100vh;">
         <header>
             <nav class="navbar navbar-expand-md navbar navbar-dark shadow-sm" style="background-color:#101820">
                 <div class="container">
@@ -26,7 +26,7 @@
                                     <a class="dropdown-item text-light" href="{{ route('product.trash') }}">Lixeira Produto</a>
                                     <a class="dropdown-item text-warning" href="{{route('product.create')}}">Criar Produto</a>
                                 </ul>
-                            </li>                            
+                            </li>
                             <li class="nav-item dropdown"> <!-- dropdown para Categorias -->
                                 <a class="nav-link dropdown-toggle" href="#" id="navbarProdutosAdm" role="button" data-bs-toggle="dropdown">Categorias</a>
                                 <ul class="dropdown-menu bg-dark" aria-labelledby="navbarProdutosAdm">

@@ -1,22 +1,9 @@
 <x-guest-layout>
     <x-auth-card>
-        <x-slot name="logo">
-            <a href="/">
-                <div style="
-                display: flex;
-                flex-direction: column;
-                flex-wrap: nowrap;
-                justify-content: center;
-                align-items: center;
-                align-content: stretch;">
-                    <img src="../images/shonnen.png" alt="E-vortex logo" style="width: 700px" />
-                </div>
-            </a>
-        </x-slot>
-
         <!-- Validation Errors -->
         <x-auth-validation-errors class="mb-4" :errors="$errors" />
-        <div class="container d-felx justofy-content-center">
+
+        <div class="container d-flex justify-content-center">
             <form method="POST" action="{{ route('register') }}">
                 @csrf
 

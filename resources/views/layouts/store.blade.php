@@ -9,6 +9,8 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:300,400,600,700&display=swap" rel="stylesheet">
     <link href="../../css/app.css" rel="stylesheet">
+    <script src="{{asset('js/cep.js')}}"></script>
+
     <title>Shonen Store</title>
 </head>
 
@@ -63,7 +65,7 @@
                                 <button style="border:2px solid black; border-color:#d22630; color:#d22630" type="submit" class="input-group-text btn">Buscar</button>
                             </div>
                         </form>
-                        <button class="btn btn-default rounded">
+                        <button class="btn btn-default rounded m-2">
                             <a href="{{ route('cart.index') }}">
                                 <img src="/../images/cart.png" width="25" />
                             </a>

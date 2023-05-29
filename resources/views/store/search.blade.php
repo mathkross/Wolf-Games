@@ -8,7 +8,7 @@
             <p class="text-muted">Todos Produtos com base na sua pesquisa</p>
         </div>
     </div>
-    <div class="row">
+    <div class="row justify-content-center justify-content-lg-start">
         @foreach ($products as $product)
         <div class="card bg-light mx-3 shadow p-3 mb-5 bg-white rounded" style="width: 18rem;">
             <img src="{{ asset($product->image) }}" class="card-img-top card-img-top h-100 w-100">

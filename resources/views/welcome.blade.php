@@ -27,11 +27,14 @@
     </div>
 </div>
 
-<section class="container">
-    <div class="row">
+<section class="container ">
+    <div class="row justify-content-center justify-content-lg-start">
         @foreach ($products as $product)
         <div class="card bg-light mx-3 shadow p-3 mb-5 bg-white rounded" style="width: 18rem;">
-            <img src="{{ asset($product->image) }}" class="card-img-top h-100 w-100">
+            <a class="h-100 w-100" href="{{ route('show.product', $product->id) }}">
+
+                <img src="{{ asset($product->image) }}" class="card-img-top ">
+            </a>
 
             <h5 class="card-title text-center">{{ $product->name }}</h5>
 

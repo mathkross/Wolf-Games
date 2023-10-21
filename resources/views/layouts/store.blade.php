@@ -15,9 +15,9 @@
 </head>
 
 <body style="background-color: #350709;margin:0; padding:0;  height:100%">
-    <div class="bg-image" style="background :url(/../images/fundo.png) center/cover no-repeat; height: 100vh;">
+    <div class="bg-image" style="background-color:#B0C4DE; height: 100vh;">
         <header>
-            <nav class="navbar navbar-expand-lg navbar-dark shadow-sm" style=background-color:#101820>
+            <nav class="navbar navbar-expand-lg navbar-dark shadow-sm" style=background-color:#6495ED>
                 <div class="container-fluid">
                     <a class="navbar-brand" href="{{ url('/') }}">
                         <img class="d=inline-block align-top" src="/../images/shonnen.png" style="width:128px;height:80px;">
@@ -32,7 +32,7 @@
                             @endphp
                             @foreach ($types as $type)
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('search.type', $type->id) }}" style=" color:#d22630" id="navbarTag" role="button">{{$type->name}}</a>
+                                <a class="nav-link" href="{{ route('search.type', $type->id) }}" style=" color:#F8F8FF" id="navbarTag" role="button">{{$type->name}}</a>
                             </li>
                             @endforeach
 
@@ -113,16 +113,16 @@
             </div>
         </main>
 
-        <footer class="footer text-muted" style="background-color:#101820;">
+        <footer class="footer text-muted" style="background-color:#6495ED;">
             <div class="container pb-1  pt-2">
                 <div class="row">
                     <div class="col-12 col-md-5">
-                        <a href="#" class="navbar-brand text-muted"><span style="color:#d22630">Shonen Store</span></a>
+                        <a href="#" class="navbar-brand text-muted"><span style="color:LightYellow">Shonen Store</span></a>
                         <p>Sua loja virtual de entreterimento japonês</p>
                     </div>
 
                     <div class="col-12 col-sm-6 col-md-2 offset-md-1">
-                        <h5 class="footer-link-title" style="color:#d22630">Categorias</h2>
+                        <h5 class="footer-link-title" style="color:LightYellow">Categorias</h2>
                             <ul class="nav flex-column">
                                 @php $categories = \App\Models\Category::all();
                                 @endphp
@@ -132,7 +132,7 @@
                             </ul>
                     </div>
                     <div class="col-12 col-sm-6 col-md-2 offset-md-2">
-                        <h5 class="footer-link-title" style="color:#d22630">Tags</h2>
+                        <h5 class="footer-link-title" style="color:LightYellow">Tags</h2>
                             <ul class="nav d-flex align-content-end flex-wrap">
                                 @php $tags = \App\Models\Tag::all();
                                 @endphp

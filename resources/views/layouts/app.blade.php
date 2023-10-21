@@ -36,11 +36,11 @@
                                 </ul>
                             </li>
                             <li class="nav-item dropdown"> <!-- dropdown para Tipo -->
-                                <a class="nav-link dropdown-toggle" href="#" id="navbarProdutosAdm" role="button" data-bs-toggle="dropdown">Tipo</a>
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarProdutosAdm" role="button" data-bs-toggle="dropdown">Plataforma</a>
                                 <ul class="dropdown-menu bg-dark" aria-labelledby="navbarProdutosAdm">
-                                    <a class="dropdown-item text-light" href="{{ route('type.index') }}"> Listagem tipos</a>
-                                    <a class="dropdown-item text-light" href="{{ route('type.trash') }}">Lixeira tipos</a>
-                                    <a class="dropdown-item text-warning" href="{{route('type.create')}}">Criar tipo</a>
+                                    <a class="dropdown-item text-light" href="{{ route('type.index') }}"> Listagem plataforma</a>
+                                    <a class="dropdown-item text-light" href="{{ route('type.trash') }}">Lixeira das plataformas</a>
+                                    <a class="dropdown-item text-warning" href="{{route('type.create')}}">Criar Plataforma</a>
                                 </ul>
                             </li>
                             <li class="nav-item dropdown"> <!-- dropdown para Tags -->

@@ -28,11 +28,11 @@
                 </div>
 
                 <div class="flex items-center my-3">
-                    <x-button class="ml-3 btn btn-dark">
+                    <x-button class="ml-3 btn btn-success">
                         {{ __('Registrar') }}
                     </x-button>
 
-                    <a class="text-sm btn link-danger" href="{{ route('login') }}">
+                    <a class="text-sm btn link-primary" href="{{ route('login') }}">
                         {{ __('Já registrado?') }}
                     </a>
                 </div>

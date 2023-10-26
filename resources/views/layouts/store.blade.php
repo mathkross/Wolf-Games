@@ -11,13 +11,13 @@
     <link href="../../css/app.css" rel="stylesheet">
     <script src="{{asset('js/cep.js')}}"></script>
 
-    <title>Shonen Store</title>
+    <title>Wolf Games</title>
 </head>
 
-<body style="background-color: #350709;margin:0; padding:0;  height:100%">
-    <div class="bg-image" style="background :url(/../images/fundo.png) center/cover no-repeat; height: 100vh;">
+<body style="background-color:#4169E1;margin:0; padding:0;  height:100%">
+    <div class="bg-image" style="background-color:#C0C0C0; height: 100vh;">
         <header>
-            <nav class="navbar navbar-expand-lg navbar-dark shadow-sm" style=background-color:#101820>
+            <nav class="navbar navbar-expand-lg navbar-dark shadow-sm" style=background-color:#708090>
                 <div class="container-fluid">
                     <a class="navbar-brand" href="{{ url('/') }}">
                         <img class="d=inline-block align-top" src="/../images/shonnen.png" style="width:128px;height:80px;">
@@ -32,7 +32,7 @@
                             @endphp
                             @foreach ($types as $type)
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('search.type', $type->id) }}" style=" color:#d22630" id="navbarTag" role="button">{{$type->name}}</a>
+                                <a class="nav-link" href="{{ route('search.type', $type->id) }}" style=" color:#F8F8FF" id="navbarTag" role="button">{{$type->name}}</a>
                             </li>
                             @endforeach
 
@@ -62,7 +62,7 @@
                         <form action="{{ route('search.product') }}" class="d-flex form-group ms-auto pe-4"> <!--busca de produto-->
                             <input type="search" aria-label="Search" class="form-control me-2" placeholder="Pesquise o produto" name="s">
                             <div class="input-group-append px-1">
-                                <button style="border:2px solid black; border-color:#d22630; color:#d22630" type="submit" class="input-group-text btn">Buscar</button>
+                                <button style="border:2px solid black; border-color:#000080; color:#000080" type="submit" class="input-group-text btn">Buscar</button>
                             </div>
                         </form>
                         <button class="btn btn-default rounded m-2">
@@ -81,7 +81,7 @@
                             @else
                             <li class="nav-item dropdown">
                                 <a id="navbarUser" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                    <span style="color:#d22630 " class="text">Bem vindo </span> {{ Auth::user()->name }}
+                                    <span style="color:#000080 " class="text">Bem vindo </span> {{ Auth::user()->name }}
                                 </a>
                                 <div class="dropdown-menu dropdown-menu-right bg-dark" aria-labelledby="navbarUser">
                                     @if (Auth::user()->role =="admin")
@@ -113,16 +113,16 @@
             </div>
         </main>
 
-        <footer class="footer text-muted" style="background-color:#101820;">
+        <footer class="footer text-muted" style="background-color:#6495ED;">
             <div class="container pb-1  pt-2">
                 <div class="row">
                     <div class="col-12 col-md-5">
-                        <a href="#" class="navbar-brand text-muted"><span style="color:#d22630">Shonen Store</span></a>
+                        <a href="#" class="navbar-brand text-muted"><span style="color:LightYellow">Shonen Store</span></a>
                         <p>Sua loja virtual de entreterimento japonês</p>
                     </div>
 
                     <div class="col-12 col-sm-6 col-md-2 offset-md-1">
-                        <h5 class="footer-link-title" style="color:#d22630">Categorias</h2>
+                        <h5 class="footer-link-title" style="color:LightYellow">Categorias</h2>
                             <ul class="nav flex-column">
                                 @php $categories = \App\Models\Category::all();
                                 @endphp
@@ -132,7 +132,7 @@
                             </ul>
                     </div>
                     <div class="col-12 col-sm-6 col-md-2 offset-md-2">
-                        <h5 class="footer-link-title" style="color:#d22630">Tags</h2>
+                        <h5 class="footer-link-title" style="color:LightYellow">Tags</h2>
                             <ul class="nav d-flex align-content-end flex-wrap">
                                 @php $tags = \App\Models\Tag::all();
                                 @endphp

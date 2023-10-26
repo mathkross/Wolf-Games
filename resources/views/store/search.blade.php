@@ -19,7 +19,7 @@
                 <span class="text-muted">R$ {{ number_format($product->price, 2, ',', '.')}}</span>
             </div>
             <div class="card-body text-center">
-                <a style="background-color:#d22630" href="{{ route('show.product', $product->id) }}" class="btn btn-sm card-link text-white">Visualizar</a>
+                <a style="background-color:#5F9EA0" href="{{ route('show.product', $product->id) }}" class="btn btn-sm card-link text-white">Visualizar</a>
 
                 <form action="{{ route('cart.store', $product->id) }}" method="POST" style="display:inline">
                     @csrf

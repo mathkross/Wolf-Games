@@ -30,7 +30,7 @@
 
                 <!-- Forgot password -->
                 <div class="flex items-center my-3">
-                    <x-button class="me-1 btn btn-danger">
+                    <x-button class="me-1 btn btn-primary">
                         {{ __('Login') }}
                     </x-button>
                     <a class="mx-1 text-sm btn btn-dark" href="{{ route('register') }}">

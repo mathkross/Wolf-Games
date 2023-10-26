@@ -63,7 +63,7 @@
 <div class='d-flex justify-content-center'>
     <div class='d-flex flex-column'>
         <h1>Você não tem nenhum pedido</h1>
-        <a style="background-color:#d22630" href=" {{ url('/') }}" class="btn btn-sm card-link text-white">Voltar a tela inicial</a>
+        <a style="background-color:#4169E1" href=" {{ url('/') }}" class="btn btn-sm card-link text-white">Voltar a tela inicial</a>
     </div>
 </div>
 @endforelse

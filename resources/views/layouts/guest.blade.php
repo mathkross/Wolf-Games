@@ -19,7 +19,7 @@
 </head>
 
 <body>
-    <div class="font-sans text-white-900 antialiased bg-image" style="background :url(/../images/fundo.png) center/cover no-repeat; height: 100vh;">
+    <div class="font-sans text-white-900 antialiased bg-image" style="background-color: #000000">
         {{ $slot }}
     </div>
 </body>

@@ -88,7 +88,7 @@
                         </form>
                         <form action="{{ route('cart.store', $item->Product->id) }}" method="POST" style="display:inline">
                             @csrf
-                            <button type="submit" class="btn btn-info btn-sm">+</button>
+                            <button type="submit" class="btn btn-warning btn-sm">+</button>
                         </form>
                     </td>
                 </tr>

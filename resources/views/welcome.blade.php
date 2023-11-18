@@ -9,11 +9,11 @@
             <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
         </div>
         <div class="carousel-inner" style="height: 30em">
-            <div class="carousel-item active h-100" data-bs-interval="10000" style="background: url(../images/shonnen1.jpg) center/contain no-repeat">
+            <div class="carousel-item active h-100" data-bs-interval="10000" style="background: url(../images/car1.png) center/contain no-repeat">
             </div>
-            <div class="carousel-item h-100" data-bs-interval="2000" style="background: url(../images/camisa1.jpg) center/contain no-repeat">
+            <div class="carousel-item h-100" data-bs-interval="2000" style="background: url(../images/car2.png) center/contain no-repeat">
             </div>
-            <div class="carousel-item h-100" style="background: url(../images/camisa2.jpg) center/contain no-repeat">
+            <div class="carousel-item h-100" style="background: url(../images/car3.png) center/contain no-repeat">
             </div>
         </div>
         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
@@ -30,7 +30,7 @@
 <section class="container ">
     <div class="row justify-content-center justify-content-lg-start">
         @foreach ($products as $product)
-        <div class="card bg-light mx-3 shadow p-3 mb-5 bg-white rounded" style="width: 18rem;">
+        <div class="card  mx-3 shadow p-3 mb-5  rounded" style="width: 18rem; background-color:#DAA520 ">
             <a class="h-100 w-100" href="{{ route('show.product', $product->id) }}">
 
                 <img src="{{ asset($product->image) }}" class="card-img-top ">
@@ -43,7 +43,7 @@
                 <span class="text-muted">R$ {{ number_format($product->price, 2, ',', '.')}}</span>
             </div>
             <div class="card-body text-center">
-                <a style="background-color:#5F9EA0" href="{{ route('show.product', $product->id) }}" class="btn btn-sm card-link text-white">Visualizar</a>
+                <a style="background-color:#9370DB" href="{{ route('show.product', $product->id) }}" class="btn btn-sm card-link text-white">Visualizar</a>
                 <form action="{{ route('cart.store', $product->id) }}" method="POST" style="display:inline">
                     @csrf
                     <button style="background-color:#101820" type="submit" class="btn text-white btn-sm card-link">Comprar</button>

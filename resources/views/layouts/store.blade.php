@@ -14,8 +14,8 @@
     <title>Alpha Games</title>
 </head>
 
-<body style="background-color:#000000   ;margin:0; padding:0;  height:100%">
-    <div class="bg-image" style="background-color:#000000; height: 100vh;">
+<body style="background-color:#472468   ;margin:0; padding:0;  height:100%">
+    <div class="bg-image" style="background :url(/../images/fundo.jpg) center/cover no-repeat; height: 100vh;">
         <header>
             <nav class="navbar navbar-expand-lg navbar-dark shadow-sm" style=background-color:#472468>
                 <div class="container-fluid">
@@ -100,8 +100,8 @@
                 </div>
             </nav>
         </header>
-        <main class="py-4 container bg-light" style="min-height:100%; position:relative;">
-            <div style="padding-bottom:100px">
+        <main class="py-4 container " style="min-height:50%; background-color:#8A2BE2 ; b position:relative;">
+            <div style="padding-bottom:100px; background-color:#472468">
 
                 @if (session()->has('success'))
                 <div class="alert alert-success">{{ session()->get('success') }}</div>

@@ -28,38 +28,20 @@
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav mr-auto">
 
-                            @php $types = \App\Models\Type::all();
-                            @endphp
-                            @foreach ($types as $type)
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ route('search.type', $type->id) }}" style=" color:#F8F8FF" id="navbarTag" role="button">{{$type->name}}</a>
-                            </li>
-                            @endforeach
 
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" href="#" id="navbarCategoria" role="button" data-bs-toggle="dropdown">Categorias</a>
                                 <ul class="dropdown-menu bg-dark" aria-labelledby="navbarCategoria">
-                                    @php $categories = \App\Models\Category::all();
+                                    @php $categories = \App\Models\Categoria::all();
                                     @endphp
-                                    @foreach ($categories as $category)<!-- listagem categorias-->
-                                    <a class="dropdown-item text-white" href="{{ route('search.category', $category->id) }}">{{ $category->name }}</a>
-                                    @endforeach
-                                </ul>
-                            </li>
-
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" id="navbarTag" role="button" data-bs-toggle="dropdown">Tags</a>
-                                <ul class="dropdown-menu bg-dark" aria-labelledby="navbarTag">
-                                    @php $tags = \App\Models\Tag::all();
-                                    @endphp
-                                    @foreach ($tags as $tag)
-                                    <a class="dropdown-item text-white" href="{{ route('search.tag', $tag->id) }}">{{ $tag->name }}</a>
+                                    @foreach ($categorias as $categoria)<!-- listagem categorias-->
+                                    <a class="dropdown-item text-white" href="{{ route('search.categoria', $categoria->id) }}">{{ $categoria->name }}</a>
                                     @endforeach
                                 </ul>
                             </li>
 
                         </ul>
-                        <form action="{{ route('search.product') }}" class="d-flex form-group ms-auto pe-4"> <!--busca de produto-->
+                        <form action="{{ route('search.produto') }}" class="d-flex form-group ms-auto pe-4"> <!--busca de produto-->
                             <input type="search" aria-label="Search" class="form-control me-2" placeholder="Pesquise o produto" name="s">
                             <div class="input-group-append px-1">
                                 <button style="border:2px solid black; border-color:#ffBD59; color:#ffBD59" type="submit" class="input-group-text btn">Buscar</button>
@@ -128,16 +110,6 @@
                                 @endphp
                                 @foreach ($categories as $category)
                                 <li class="nav-item mb-2"><a href="{{ route('search.category', $category->id) }}" class="nav-link p-0 text-light">{{ $category->name }}</a></li>
-                                @endforeach
-                            </ul>
-                    </div>
-                    <div class="col-12 col-sm-6 col-md-2 offset-md-2">
-                        <h5 class="footer-link-title" style="color:#F8F8FF">Tags</h2>
-                            <ul class="nav d-flex align-content-end flex-wrap">
-                                @php $tags = \App\Models\Tag::all();
-                                @endphp
-                                @foreach ($tags as $tag)
-                                <li class="btn btn-outline-secondary mx-1 mb-2 btn-sm"><a href="{{ route('search.tag', $tag->id) }}" class="nav-link p-0 text-light">{{ $tag->name }}</a></li>
                                 @endforeach
                             </ul>
                     </div>

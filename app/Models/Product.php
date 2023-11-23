@@ -19,7 +19,7 @@ class Product extends Model
     public function Type(){
         return $this->belongsTo(Type::class);
     }
-    
+
     public function Tags(){
         return $this->belongsToMany(Tag::class);
     }

@@ -3,18 +3,17 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
-class Tag extends Model
+class Categoria extends Model
 {
     use HasFactory;
-    use softDeletes;
+    use SoftDeletes;
     protected $fillable = ['name'];
 
-    public function Products(){
-        return $this->belongsToMany(Product::class);
+    public function Produtos(){
+        return $this->hasMany(Produto::class);
     }
 
-    
 }

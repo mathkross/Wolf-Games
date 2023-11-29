@@ -23,7 +23,15 @@ class RedirectIfAuthenticated
 
         foreach ($guards as $guard) {
             if (Auth::guard($guard)->check()) {
+                if ($request->routeIs('guest.*')) {
+                    return $next($request);
+                }
+                if ($request->is('guest/*')) {
+                    return $next($request);
+                }
+                // Caso contrário, redirecione para a rota padrão ou outra rota desejada.
                 return redirect(RouteServiceProvider::HOME);
+
             }
         }
 

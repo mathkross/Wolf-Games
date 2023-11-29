@@ -17,6 +17,10 @@
                     <x-input class="form-control block mt-1 w-full" placeholder="Email" id="email" type="email" name="email" :value="old('email')" required />
                 </div>
 
+                <div class="my-2">
+                    <x-input class="form-control block mt-1 w-full" placeholder="cpf" id="cpf" type="text" name="cpf" required />
+                </div>
+
                 <!-- Password -->
                 <div class="my-2">
                     <x-input class="form-control block mt-1 w-full" placeholder="Senha" id="password" type="password" name="password" required autocomplete="new-password" />

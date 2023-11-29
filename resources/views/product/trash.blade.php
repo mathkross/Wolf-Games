@@ -12,7 +12,6 @@
                 <th>Descrição</th>
                 <th>Cat ID</th>
                 <th>Categoria</th>
-                <th>Tag</th>
                 <th>Preço</th>
                 <th>Estoque</th>
                 <th>Restaurar</th>
@@ -26,9 +25,6 @@
                 <td>{{$product->description}}</td>
                 <td>{{$product->Category->id}}</td>
                 <td>{{$product->Category->name}}</td>
-                <td>@foreach($product->Tags()->get() as $tag)
-                {{$tag->name}}
-                @endforeach</td>
                 <td>{{$product->price}}</td>
                 <td>{{$product->stock}}</td>
                 <td><a class="btn btn-success" href="{{ route('product.restore', $product->id) }}">Restaurar</a></td>

@@ -3,14 +3,13 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Product;
+use App\Models\Produto;
 use App\Models\Category;
-use App\Models\Tag;
-use App\Models\Type;
+
 
 class eCommerceController extends Controller
 {
-    public function index(Product $products){
+    public function index(Produto $products){
         return view('welcome')->with('products', $products->Paginate(8));
     }
 
@@ -18,19 +17,12 @@ class eCommerceController extends Controller
         return view('store.search')->with(['products' => $category->Products, 'title' => $category->name]);
     }
 
-    public function searchType(Type $type){
-        return view('store.search')->with(['products' => $type->Products, 'title' => $type->name]);
-    }
-    
-    public function searchTag(Tag $tag){
-        return view('store.search')->with(['products' => $tag->Products, 'title' => $tag->name]);
-    }
-  
+
     public function searchProduct(Request $request){
         $search = $request->query('s');
 
         if($search){
-            $products = Product::where('name','LIKE',"%{$search}%")->get();
+            $products = Produto::where('name','LIKE',"%{$search}%")->get();
             return view('store.search')->with(['products' => $products, 'title' => $search]);
         }else{
             session()->flash('error', 'Você precisa digitar o nome de algum produto.');
@@ -38,10 +30,10 @@ class eCommerceController extends Controller
         }
     }
 
-    public function showProduct(Product $product){
+    public function showProduct(Produto $product){
         return view('store.product')->with('product',$product);
     }
-   
+
 
 }
 

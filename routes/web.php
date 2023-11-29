@@ -1,18 +1,15 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\ProductController;
+use App\Http\Controllers\ProdutoController;
 use App\Http\Controllers\CategoryController;
-use App\Http\Controllers\TagController;
 use App\Http\Controllers\eCommerceController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\OrderController;
-use App\Http\Controllers\TypeController;
+
 
 Route::get('/', [eCommerceController::class, 'index'])->name('home');
 Route::get('/search/category/{category}', [eCommerceController::class, 'searchCategory'])->name('search.category');
-Route::get('/search/type/{type}', [eCommerceController::class, 'searchType'])->name('search.type');
-Route::get('/search/tag/{tag}', [eCommerceController::class, 'searchTag'])->name('search.tag');
 Route::get('/search/product/',  [eCommerceController::class, 'searchProduct'])->name('search.product');
 Route::get('/show/{product}', [eCommerceController::class, 'showProduct'])->name('show.product');
 
@@ -31,14 +28,14 @@ Route::middleware(['auth'])->group(function () {
 });
 
 Route::middleware(['auth', 'admin'])->group(function () {
-    Route::get('/product/create', [ProductController::class, 'create'])->name('product.create');
-    Route::post('/product/create', [ProductController::class, 'store'])->name('product.store');
-    Route::get('/product', [ProductController::class, 'index'])->name('product.index');
-    Route::get('/product/destroy/{product}', [ProductController::class, 'destroy'])->name('product.destroy');
-    Route::get('/product/edit/{product}', [ProductController::class, 'edit'])->name('product.edit');
-    Route::put('/product/edit/{product}', [ProductController::class, 'update'])->name('product.update');
-    Route::get('/product/trash', [ProductController::class, 'trash'])->name('product.trash');
-    Route::get('/product/restore/{product}', [ProductController::class, 'restore'])->name('product.restore');
+    Route::get('/produto/create', [ProdutoController::class, 'create'])->name('produto.create');
+    Route::post('/produto/create', [ProdutoController::class, 'store'])->name('produto.store');
+    Route::get('/produto', [ProdutoController::class, 'index'])->name('produto.index');
+    Route::get('/produto/destroy/{produto}', [ProdutoController::class, 'destroy'])->name('produto.destroy');
+    Route::get('/produto/edit/{produto}', [ProdutoController::class, 'edit'])->name('produto.edit');
+    Route::put('/produto/edit/{produto}', [ProdutoController::class, 'update'])->name('produto.update');
+    Route::get('/produto/trash', [ProdutoController::class, 'trash'])->name('produto.trash');
+    Route::get('/produto/restore/{produto}', [ProdutoController::class, 'restore'])->name('produto.restore');
 
     Route::get('/category/create', [CategoryController::class, 'create'])->name('category.create');
     Route::post('/category/create', [CategoryController::class, 'store'])->name('category.store');
@@ -49,21 +46,4 @@ Route::middleware(['auth', 'admin'])->group(function () {
     Route::get('/category/trash', [CategoryController::class, 'trash'])->name('category.trash');
     Route::get('/category/restore/{category}', [CategoryController::class, 'restore'])->name('category.restore');
 
-    Route::get('/type/create', [TypeController::class, 'create'])->name('type.create');
-    Route::post('/type/create', [TypeController::class, 'store'])->name('type.store');
-    Route::get('/type', [TypeController::class, 'index'])->name('type.index');
-    Route::get('/type/destroy/{type}', [TypeController::class, 'destroy'])->name('type.destroy');
-    Route::get('/type/edit/{type}', [TypeController::class, 'edit'])->name('type.edit');
-    Route::put('/type/edit/{type}', [TypeController::class, 'update'])->name('type.update');
-    Route::get('/type/trash', [TypeController::class, 'trash'])->name('type.trash');
-    Route::get('/type/restore/{type}', [TypeController::class, 'restore'])->name('type.restore');
-
-    Route::get('/tag/create', [TagController::class, 'create'])->name('tag.create');
-    Route::post('/tag/create', [TagController::class, 'store'])->name('tag.store');
-    Route::get('/tag', [TagController::class, 'index'])->name('tag.index');
-    Route::get('/tag/destroy/{tag}', [TagController::class, 'destroy'])->name('tag.destroy');
-    Route::get('/tag/edit/{tag}', [TagController::class, 'edit'])->name('tag.edit');
-    Route::put('/tag/edit/{tag}', [TagController::class, 'update'])->name('tag.update');
-    Route::get('/tag/trash', [TagController::class, 'trash'])->name('tag.trash');
-    Route::get('/tag/restore/{tag}', [TagController::class, 'restore'])->name('tag.restore');
 });

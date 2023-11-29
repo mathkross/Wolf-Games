@@ -7,7 +7,7 @@ use App\Models\Order;
 use App\Models\Cart;
 use App\Http\Controllers\Controller;
 use App\Models\OrderProduct;
-use App\Models\Product;
+use App\Models\Produto;
 use Illuminate\Support\Facades\Auth;
 
 class OrderController extends Controller
@@ -34,9 +34,9 @@ class OrderController extends Controller
         $orderToDelete = Order::where([
             'id' => $request->id,
           ])->first();
-      
+
             $orderToDelete->delete();
-      
+
         session()->flash('success', 'O seu pedido para ('.$orderToDelete->city.') foi removido.');
         return redirect()->back();
     }

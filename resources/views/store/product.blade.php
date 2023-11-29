@@ -16,12 +16,7 @@
             <div style="height:540px;" class=" text-left shadow-sm p-3 mb-3 bg-light rounded">
                 <img src="{{ asset($product->image) }}" style="max-width: 100%; max-height:100%; width:100%; height:100%">
             </div>
-            <div class="">
-                <h3>Tags</h3>
-                @foreach($product->Tags as $tag)
-                <a class="btn btn-sm btn-secondary" href="{{ route('search.tag', $tag->id) }}">{{$tag->name}}</a>
-                @endforeach
-            </div>
+
 
             <form class="row" action="{{ route('cart.store', $product->id) }}" method="POST">
 

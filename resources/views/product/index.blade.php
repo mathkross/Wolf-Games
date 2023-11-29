@@ -12,8 +12,6 @@
                 <th>Nome</th>
                 <th>Descrição</th>
                 <th>Categoria</th>
-                <th>Tipo</th>
-                <th>Tag</th>
                 <th>Preço</th>
                 <th>Estoque</th>
                 <th>Editar</th>
@@ -21,21 +19,18 @@
             </tr>
         </thead>
         <tbody>
-            @foreach($products as $product)
+            @foreach($produtos as $produto)
             <tr>
-                <td>{{$product->id}}</td>
-                <td><img src="{{asset($product->image)}}" style="width:35px; height:35px;"></td>
-                <td>{{$product->name}}</td>
-                <td>{{$product->description}}</td>
-                <td>{{$product->Category->name}}</td>
-                <td>{{$product->Type->name}}</td>
-                <td>@foreach($product->Tags()->get() as $tag)
-                {{$tag->name}}
-                @endforeach</td>
-                <td>{{$product->price}}</td>
-                <td>{{$product->stock}}</td>
-                <td><a  class="btn btn-warning" href="{{ route('product.edit', $product->id) }}">Editar</a></td>
-                <td><a  class="btn btn-danger" href="{{ route('product.destroy', $product->id) }}">Apagar</a></td>
+                <td>{{$produto->id}}</td>
+                <td><img src="{{asset($produto->image)}}" style="width:35px; height:35px;"></td>
+                <td>{{$produto->name}}</td>
+                <td>{{$produto->description}}</td>
+                <td>{{$produto->Category->name}}</td>
+                <td>{{$produto->Type->name}}</td>
+                <td>{{$produto->price}}</td>
+                <td>{{$produto->stock}}</td>
+                <td><a  class="btn btn-warning" href="{{ route('produto.edit', $produto->id) }}">Editar</a></td>
+                <td><a  class="btn btn-danger" href="{{ route('produto.destroy', $produto->id) }}">Apagar</a></td>
             </tr>
             @endforeach
         </tbody>

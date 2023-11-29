@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<form action="{{route('product.store')}}" method="POST" enctype="multipart/form-data" class="pb-5 pt-2">
+<form action="{{route('produto.store')}}" method="POST" enctype="multipart/form-data" class="pb-5 pt-2">
 
     <div  class=" container pb-5 mt-5 form-row bg-light shadow p-3 mb-5 bg-light rounded-3 col-4">
         @csrf
@@ -23,22 +23,6 @@
             <select required class="form-control " name="category_id" id="categProd">
                 @foreach($categories as $category)
                 <option value="{{$category->id}}">{{ $category->name }}</option>
-                @endforeach
-            </select>
-        </div>
-        <div class="form-row col-md"> <!-- Tipo do produto-->
-            <label for="typeProd">Tipo</label>
-            <select required class="form-control " name="type_id" id="typeProd">
-                @foreach($types as $type)
-                <option value="{{$type->id}}">{{ $type->name }}</option>
-                @endforeach
-            </select>
-        </div>
-        <div class="form-row col-md"> <!-- Tagamento do produto-->
-            <label for="tagProd">Tag</label>
-            <select class="form-control"  multiple name="tags[]" id="tagProd">
-                @foreach($tags as $tag)
-                <option value="{{$tag->id}}">{{$tag->name}}</option>
                 @endforeach
             </select>
         </div>

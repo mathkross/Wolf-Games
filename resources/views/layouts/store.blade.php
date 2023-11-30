@@ -20,7 +20,7 @@
             <nav class="navbar navbar-expand-lg navbar-dark shadow-sm" style=background-color:#472468>
                 <div class="container-fluid">
                     <a class="navbar-brand" href="{{ url('/') }}">
-                        <img class="d=inline-block align-top" src="/../images/shonnen.png" style="width:128px;height:80px;">
+                        <img class="d=inline-block align-top" src="/../images/logo.png" style="width:128px;height:80px;">
                     </a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
@@ -117,12 +117,12 @@
             <div class="container pb-1  pt-2">
                 <div class="row">
                     <div class="col-12 col-md-5">
-                        <a href="#" class="navbar-brand text-muted"><span style="color:#F8F8FF">Alpha Games</span></a>
-                        <p  style="color:#F8F8FF">Sua loja virtual de games</p>
+                        <a href="#" class="navbar-brand text-muted"><span style="color:#F5DEB3">Alpha Games</span></a>
+                        <p  style="color:#F8F8FF">Bem-vindo à Alpha Games, sua loja online de jogos premium. Explore nossa seleção única de títulos para todas as plataformas. Encontre os últimos lançamentos, clássicos atemporais e ofertas exclusivas. Navegue, escolha e mergulhe na diversão digital com a Alpha Games - onde os melhores jogos estão ao seu alcance.</p>
                     </div>
 
                     <div class="col-12 col-sm-6 col-md-2 offset-md-1">
-                        <h5 class="footer-link-title" style="color:#F8F8FF">Categorias</h2>
+                        <h5 class="footer-link-title" style="color:#F5DEB3">Categorias</h2>
                             <ul class="nav flex-column">
                                 @php $categories = \App\Models\Category::all();
                                 @endphp
@@ -132,7 +132,7 @@
                             </ul>
                     </div>
                     <div class="col-12 col-sm-6 col-md-2 offset-md-2">
-                        <h5 class="footer-link-title" style="color:#F8F8FF">Tags</h2>
+                        <h5 class="footer-link-title" style="color:#F5DEB3">Tags</h2>
                             <ul class="nav d-flex align-content-end flex-wrap">
                                 @php $tags = \App\Models\Tag::all();
                                 @endphp

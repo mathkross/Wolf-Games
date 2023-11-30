@@ -3,7 +3,7 @@
 <section class="container mt-5">
     <div class="row">
         <div class="col-lg-4 col-sm-6 p-4">
-            <h2>Detalhes do Endereço</h2>
+            <h2 style="color:white">Detalhes do Endereço</h2>
             <form action="{{ route('order.store') }}" method="POST">
                 @csrf
 
@@ -19,7 +19,7 @@
         @endif
         --}}
         <div class="form-group">
-            <label for="zipcode">CEP</label>
+            <label for="zipcode" style="color:white">CEP</label>
             <input id="cep" type="text" class="form-control @error('zipcode') is-invalid @enderror" onblur="pesquisacep(this.value);" name="zipcode" placeholder="CEP (xxxxxxxx)">
             @error('zipcode')
             <div class="invalid-feedback">
@@ -29,7 +29,7 @@
         </div>
 
         <div class="form-group">
-            <label for="address">Endereco</label>
+            <label for="address" style="color:white">Endereco</label>
             <input id="rua" type="text" class="form-control  @error('address') is-invalid @enderror" name="address" placeholder="Endereço">
             @error('address')
             <div class="invalid-feedback">
@@ -39,7 +39,7 @@
 
         </div>
         <div class="form-group">
-            <label for="city">Cidade</label>
+            <label for="city" style="color:white" >Cidade</label>
             <input id="cidade" type="text" class="form-control @error('city') is-invalid @enderror" name="city" placeholder="Cidade">
             @error('city')
             <div class="invalid-feedback">
@@ -48,7 +48,7 @@
             @enderror
         </div>
         <div class="form-group">
-            <label for="state">Estado</label>
+            <label for="state" style="color:white">Estado</label>
             <input id="uf" type="text" class="form-control  @error('state') is-invalid @enderror" name="state" placeholder="Estado">
             @error('state')
             <div class="invalid-feedback">
@@ -62,17 +62,17 @@
 
     </div>
     <div class="col-lg-8 p-4">
-        <h2>Detalhes dos Produtos</h2>
+        <h2 style="color:white">Detalhes dos Produtos</h2>
         <table class="table">
             <thead>
-                <tr>
+                <tr style="color:white">
                     <th>Foto</th>
                     <th>Produto</th>
                     <th>Preço Unidade</th>
                     <th>Quantidade</th>
                 </tr>
             </thead>
-            <tbody>
+            <tbody style="color:white">
                 <?php $total = 0.0 ?>
                 @foreach($itens as $item)
                 <tr>

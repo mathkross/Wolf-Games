@@ -16,7 +16,7 @@
         <header>
             <nav class="navbar navbar-expand-md navbar navbar-dark shadow-sm" style="background-color:#101820">
                 <div class="container">
-                    <a class="navbar-brand" href="{{ url('/') }}"><img src="/../images/shonnen.png" style="width:128px;height:80px;"></a>
+                    <a class="navbar-brand" href="{{ url('/') }}"><img src="/../images/logo.png" style="width:128px;height:80px;"></a>
                     <div class="collapse navbar-collapse">
                         <ul class="navbar-nav mr-auto">
                             <li class="nav-item dropdown"> <!-- dropdown para Produtos -->

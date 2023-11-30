@@ -3,7 +3,7 @@
         <div class="card-header border p-1 m-1" style="background-color: #472468;">
             <a href="/">
                 <div class="d-flex justify-content-center">
-                    <img src="../images/shonnen.png" alt="Alpha logo" style="width: 60%;"/>
+                    <img src="../images/logo.png" alt="Alpha logo" style="width: 30%;"/>
                 </div>
             </a>
         </div>

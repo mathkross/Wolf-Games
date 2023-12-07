@@ -8067,6 +8067,7 @@ textarea.form-control-lg {
 
 .text-uppercase {
   text-transform: uppercase !important;
+  color: #f0f0f0;
 }
 
 .text-capitalize {
@@ -8145,7 +8146,7 @@ textarea.form-control-lg {
 
 .text-muted {
   --bs-text-opacity: 1;
-  color: #6c757d !important;
+  color: #000000 !important;
 }
 
 .text-black-50 {
